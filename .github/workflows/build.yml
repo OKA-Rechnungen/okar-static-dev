@@ -16,9 +16,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-      environment:
-        name: github-pages
   build_pages:
     name: Publish Edition as GitHub Pages Website
     runs-on: ubuntu-latest
