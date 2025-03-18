@@ -62,11 +62,11 @@ jobs:
         # Upload entire repository
         path: "./html"
  deploy:
-    name: Deploy to GitHub Pages
-    runs-on: ubuntu-latest
-    needs: build_pages  # Ensures the build completes before deployment
-    environment:
-      name: github-pages  # Required for deployment
+    - name: Deploy to GitHub Pages
+      runs-on: ubuntu-latest
+      needs: build_pages  # Ensures the build completes before deployment
+      environment:
+        name: github-pages  # Required for deployment
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
