@@ -61,12 +61,21 @@ jobs:
       with:
         # Upload entire repository
         path: "./html"
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
-    - name: Preprocess data for Typesense
-      run: |
-        ant -f build_app/ant/fixtures.xml
-    - name: Build Typesense Index
-      run: |
-        python build_app/python/make_ts_index.py
+ deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: build_pages  # Ensures the build completes before deployment
+    environment:
+      name: github-pages  # Required for deployment
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Preprocess data for Typesense
+        run: |
+          ant -f build_app/ant/fixtures.xml
+
+      - name: Build Typesense Index
+        run: |
+          build_app/python/make_ts_index.py
