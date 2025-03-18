@@ -33,7 +33,7 @@ jobs:
         python-version: '3.10'
     - name: Fetch data app
       run: |
-        build_app/scripts/fetch_data_app.sh
+        ./fetch_data_app.sh
     - name: Fetch data
       run: |
         build_app/scripts/fetch_data.sh
