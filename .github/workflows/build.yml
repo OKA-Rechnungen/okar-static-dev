@@ -77,6 +77,6 @@ jobs:
       #   run: |
       #    ant -f build_app/ant/fixtures.xml
       
-      - name: Build Typesense Index
-        run: |
-          build_app/scripts/make_ts_index.py
+          #- name: Build Typesense Index
+          #run: |
+          #build_app/scripts/make_ts_index.py
