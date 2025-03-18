@@ -49,8 +49,8 @@ jobs:
       run: |
         pip install -U pip
         pip install -r requirements.txt
-        ./build_app/scripts/attributes.sh
-        ./build_app/scripts/denormalize.sh
+        # ./build_app/scripts/attributes.sh
+        # ./build_app/scripts/denormalize.sh
     - name: Build
       run: |
         ant -f build_app/xslt/build.xml
